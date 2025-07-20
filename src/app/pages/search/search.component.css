@@ -1,0 +1,61 @@
+/* Search Component Styles */
+
+.trip-results {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+.trip-card {
+  background: var(--eco-bg-white);
+  border: 1px solid rgba(76, 175, 80, 0.1);
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: all var(--eco-transition-normal);
+  box-shadow: var(--eco-shadow-sm);
+}
+
+.trip-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--eco-shadow-lg);
+  border-color: var(--eco-primary);
+}
+
+.driver-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--eco-primary), var(--eco-primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.rating-stars {
+  font-size: 0.9rem;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 100px !important;
+  z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sticky-top {
+    position: relative !important;
+    top: auto !important;
+  }
+  
+  .trip-card .row {
+    text-align: center;
+  }
+  
+  .trip-card .col-md-8,
+  .trip-card .col-md-4 {
+    margin-bottom: 1rem;
+  }
+}

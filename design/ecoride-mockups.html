@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRide - High-Fidelity Mockups</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1B5E20;
+            background-color: #F1F8E9;
+        }
+        
+        .mockup-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .mockup {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            overflow: hidden;
+            border: 1px solid #E8F5E8;
+        }
+        
+        .mockup-title {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .browser-frame {
+            background: #f5f5f5;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .browser-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27ca3f; }
+        
+        .browser-url {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 12px;
+            color: #666;
+            margin-left: 20px;
+            flex: 1;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo i {
+            font-size: 28px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .nav-menu a.active {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .user-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: #2E7D32;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1B5E20;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+            color: white;
+            padding: 80px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q50,5 80,20 Q95,50 80,80 Q50,95 20,80 Q5,50 20,20 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+        
+        .hero-cta {
+            background: white;
+            color: #2E7D32;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Search Section */
+        .search-section {
+            background: white;
+            padding: 40px 24px;
+            margin: -40px 24px 0;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .search-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr 200px auto;
+            gap: 16px;
+            align-items: end;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2E7D32;
+        }
+        
+        .form-input {
+            padding: 14px 16px;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+        
+        .search-btn {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+        }
+        
+        /* Features Grid */
+        .features {
+            padding: 80px 24px;
+            background: #F9FBE7;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 24px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 32px;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #2E7D32;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            color: white;
+            padding: 60px 24px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1B5E20;
+            color: white;
+            padding: 40px 24px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Search Results Styles */
+        .breadcrumb {
+            padding: 16px 24px;
+            background: #F9FBE7;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .search-bar {
+            background: white;
+            padding: 20px 24px;
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .results-header {
+            padding: 24px;
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+        
+        .results-count {
+            font-weight: 600;
+            color: #2E7D32;
+        }
+        
+        .sort-options {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .main-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 600px;
+        }
+        
+        .sidebar {
+            background: #F9FBE7;
+            padding: 24px;
+            border-right: 1px solid #E0E0E0;
+        }
+        
+        .filter-section {
+            margin-bottom: 32px;
+        }
+        
+        .filter-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #2E7D32;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .range-slider {
+            width: 100%;
+            margin: 16px 0;
+        }
+        
+        .results-list {
+            padding: 24px;
+        }
+        
+        .trip-card {
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .trip-card:hover {
+            border-color: #4CAF50;
+            box-shadow: 0 4px 16px rgba(76, 175, 80, 0.1);
+        }
+        
+        .trip-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .driver-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .driver-info {
+            flex: 1;
+        }
+        
+        .driver-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .driver-rating {
+            color: #FFD700;
+            font-size: 14px;
+        }
+        
+        .trip-details {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: center;
+        }
+        
+        .trip-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .route {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2E7D32;
+        }
+        
+        .trip-meta {
+            display: flex;
+            gap: 24px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .eco-badge {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .price-section {
+            text-align: right;
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2E7D32;
+            margin-bottom: 4px;
+        }
+        
+        .price-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="mockup-container">
+        
+        <!-- Mockup 1: Home Page -->
+        <div class="mockup">
+            <div class="mockup-title">
+                <i class="fas fa-home"></i> Mockup 1: Home Page (US 1)
+            </div>
+            <div class="browser-frame">
+                <div class="browser-controls">
+                    <div class="browser-dot dot-red"></div>
+                    <div class="browser-dot dot-yellow"></div>
+                    <div class="browser-dot dot-green"></div>
+                    <div class="browser-url">https://ecoride.fr</div>
+                </div>
+            </div>
+            
+            <header class="header">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    EcoRide
+                </div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#" class="active">Accueil</a></li>
+                        <li><a href="#">Rechercher</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="user-actions">
+                    <a href="#" class="btn btn-secondary">Connexion</a>
+                    <a href="#" class="btn btn-primary">S'inscrire</a>
+                </div>
+            </header>
+            
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Réduisez votre impact environnemental avec EcoRide</h1>
+                    <p>La plateforme de covoiturage écologique pour les voyageurs conscients de l'environnement</p>
+                    <a href="#" class="btn hero-cta">
+                        <i class="fas fa-route"></i>
+                        Commencer votre voyage
+                    </a>
+                </div>
+            </section>
+            
+            <section class="search-section">
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="departure">Départ</label>
+                        <input type="text" id="departure" class="form-input" placeholder="Paris, Gare de Lyon" value="Paris, Gare de Lyon">
+                    </div>
+                    <div class="form-group">
+                        <label for="arrival">Arrivée</label>
+                        <input type="text" id="arrival" class="form-input" placeholder="Lyon, Part-Dieu" value="Lyon, Part-Dieu">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" class="form-input" value="2025-07-20">
+                    </div>
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                        Rechercher
+                    </button>
+                </form>
+            </section>
+            
+            <section class="features">
+                <div class="features-grid">
+                    <div class="feature-card animate-fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Voyage Écologique</h3>
+                        <p>Réduisez vos émissions de CO2 en partageant vos trajets avec des voyageurs partageant les mêmes valeurs environnementales.</p>
+                    </div>
+                    <div class="feature-card animate-fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <h3>Économisez de l'Argent</h3>
+                        <p>Partagez les coûts de transport et économisez sur chaque voyage tout en contribuant à un avenir plus durable.</p>
+                    </div>
+                    <div class="feature-card animate-fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Rejoignez la Communauté</h3>
+                        <p>Rencontrez des personnes eco-responsables et créez des liens avec des voyageurs qui partagent vos valeurs.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="stats">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">12,547</span>
+                        <span class="stat-label">Utilisateurs Heureux</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8,432</span>
+                        <span class="stat-label">Trajets Écologiques</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">67%</span>
+                        <span class="stat-label">Réduction CO2</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Note Moyenne</span>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="mailto:contact@ecoride.fr">
+                            <i class="fas fa-envelope"></i> contact@ecoride.fr
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i> Mentions légales
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                    <p>&copy; 2025 EcoRide. Tous droits réservés. Plateforme de covoiturage écologique.</p>
+                </div>
+            </footer>
+        </div>
+        
+        <!-- Mockup 2: Search Results Page -->
+        <div class="mockup">
+            <div class="mockup-title">
+                <i class="fas fa-search"></i> Mockup 2: Search Results (US 2, US 3, US 4)
+            </div>
+            <div class="browser-frame">
+                <div class="browser-controls">
+                    <div class="browser-dot dot-red"></div>
+                    <div class="browser-dot dot-yellow"></div>
+                    <div class="browser-dot dot-green"></div>
+                    <div class="browser-url">https://ecoride.fr/search?from=Paris&to=Lyon&date=2025-07-20</div>
+                </div>
+            </div>
+            
+            <header class="header">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    EcoRide
+                </div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#" class="active">Rechercher</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="user-actions">
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-user"></i>
+                        Jean Dupont
+                    </a>
+                </div>
+            </header>
+            
+            <div class="breadcrumb">
+                Accueil > Résultats de recherche pour "Paris vers Lyon le 20 juillet 2025"
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" class="form-input" value="Paris" style="flex: 1;">
+                <i class="fas fa-arrow-right" style="color: #4CAF50;"></i>
+                <input type="text" class="form-input" value="Lyon" style="flex: 1;">
+                <input type="date" class="form-input" value="2025-07-20">
+                <button class="btn btn-primary">Modifier</button>
+                <span class="results-count">8 covoiturages trouvés</span>
+            </div>
+            
+            <div class="main-layout">
+                <aside class="sidebar">
+                    <div class="filter-section">
+                        <h3><i class="fas fa-filter"></i> Filtres</h3>
+                        
+                        <div class="filter-section">
+                            <h4 style="margin-bottom: 12px;">Aspect écologique</h4>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox">
+                                    <span>Véhicules électriques uniquement</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4 style="margin-bottom: 12px;">Prix maximum</h4>
+                            <input type="range" class="range-slider" min="5" max="50" value="25">
+                            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #666;">
+                                <span>5€</span>
+                                <span style="font-weight: 600;">25€</span>
+                                <span>50€</span>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4 style="margin-bottom: 12px;">Durée maximale</h4>
+                            <input type="range" class="range-slider" min="1" max="8" value="4">
+                            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #666;">
+                                <span>1h</span>
+                                <span style="font-weight: 600;">4h</span>
+                                <span>8h</span>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4 style="margin-bottom: 12px;">Note minimum</h4>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="radio" name="rating" value="4">
+                                    <span>4⭐ et plus</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="radio" name="rating" value="4.5">
+                                    <span>4.5⭐ et plus</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary" style="width: 100%;">Appliquer les filtres</button>
+                    </div>
+                </aside>
+                
+                <main class="results-list">
+                    <div class="results-header">
+                        <div class="sort-options">
+                            <span style="color: #666; margin-right: 16px;">Trier par:</span>
+                            <a href="#" style="color: #4CAF50; text-decoration: none; margin-right: 16px;">Prix ↑</a>
+                            <a href="#" style="color: #666; text-decoration: none; margin-right: 16px;">Heure ↑</a>
+                            <a href="#" style="color: #666; text-decoration: none;">Note ↓</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Trip Card 1 -->
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <div class="driver-avatar">JD</div>
+                            <div class="driver-info">
+                                <div class="driver-name">Jean Dupont</div>
+                                <div class="driver-rating">⭐⭐⭐⭐⭐ 4.8 (127 avis)</div>
+                                <div style="font-size: 14px; color: #666; margin-top: 4px;">Membre depuis mars 2023</div>
+                            </div>
+                        </div>
+                        
+                        <div class="trip-details">
+                            <div class="trip-info">
+                                <div class="route">
+                                    <i class="fas fa-map-marker-alt" style="color: #4CAF50;"></i>
+                                    Paris → Lyon
+                                </div>
+                                <div class="trip-meta">
+                                    <span><i class="fas fa-calendar"></i> 20 juillet 2025</span>
+                                    <span><i class="fas fa-clock"></i> 09:00 → 13:30 (4h 30min)</span>
+                                    <span><i class="fas fa-users"></i> 2/4 places disponibles</span>
+                                </div>
+                                <div style="margin-top: 8px;">
+                                    <span class="eco-badge">
+                                        <i class="fas fa-leaf"></i>
+                                        ÉCO - Véhicule électrique
+                                    </span>
+                                </div>
+                                <div style="margin-top: 8px; font-size: 14px; color: #666;">
+                                    Préférences: 🚭 Non-fumeur | 🐕 Animaux acceptés
+                                </div>
+                            </div>
+                            
+                            <div class="price-section">
+                                <div class="price">18€</div>
+                                <div class="price-label">par personne</div>
+                                <a href="#" class="btn btn-primary">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Trip Card 2 -->
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <div class="driver-avatar" style="background: linear-gradient(135deg, #FF7043, #FF8A65);">MD</div>
+                            <div class="driver-info">
+                                <div class="driver-name">Marie Dubois</div>
+                                <div class="driver-rating">⭐⭐⭐⭐⭐ 4.9 (89 avis)</div>
+                                <div style="font-size: 14px; color: #666; margin-top: 4px;">Membre depuis janvier 2024</div>
+                            </div>
+                        </div>
+                        
+                        <div class="trip-details">
+                            <div class="trip-info">
+                                <div class="route">
+                                    <i class="fas fa-map-marker-alt" style="color: #4CAF50;"></i>
+                                    Paris → Lyon
+                                </div>
+                                <div class="trip-meta">
+                                    <span><i class="fas fa-calendar"></i> 20 juillet 2025</span>
+                                    <span><i class="fas fa-clock"></i> 14:00 → 18:15 (4h 15min)</span>
+                                    <span><i class="fas fa-users"></i> 1/4 places disponibles</span>
+                                </div>
+                                <div style="margin-top: 8px;">
+                                    <span style="background: #9E9E9E; color: white; padding: 4px 12px; border-radius: 16px; font-size: 12px;">
+                                        Véhicule essence
+                                    </span>
+                                </div>
+                                <div style="margin-top: 8px; font-size: 14px; color: #666;">
+                                    Préférences: 🚭 Non-fumeur | 🐕 Pas d'animaux
+                                </div>
+                            </div>
+                            
+                            <div class="price-section">
+                                <div class="price">15€</div>
+                                <div class="price-label">par personne</div>
+                                <a href="#" class="btn btn-primary">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Trip Card 3 -->
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <div class="driver-avatar" style="background: linear-gradient(135deg, #9C27B0, #BA68C8);">AM</div>
+                            <div class="driver-info">
+                                <div class="driver-name">Alice Martin</div>
+                                <div class="driver-rating">⭐⭐⭐⭐⭐ 4.7 (156 avis)</div>
+                                <div style="font-size: 14px; color: #666; margin-top: 4px;">Membre depuis juin 2023</div>
+                            </div>
+                        </div>
+                        
+                        <div class="trip-details">
+                            <div class="trip-info">
+                                <div class="route">
+                                    <i class="fas fa-map-marker-alt" style="color: #4CAF50;"></i>
+                                    Paris → Lyon
+                                </div>
+                                <div class="trip-meta">
+                                    <span><i class="fas fa-calendar"></i> 20 juillet 2025</span>
+                                    <span><i class="fas fa-clock"></i> 16:30 → 20:45 (4h 15min)</span>
+                                    <span><i class="fas fa-users"></i> 3/4 places disponibles</span>
+                                </div>
+                                <div style="margin-top: 8px;">
+                                    <span class="eco-badge">
+                                        <i class="fas fa-leaf"></i>
+                                        ÉCO - Véhicule hybride
+                                    </span>
+                                </div>
+                                <div style="margin-top: 8px; font-size: 14px; color: #666;">
+                                    Préférences: 🚭 Non-fumeur | 🐕 Animaux acceptés | 🎵 Musique
+                                </div>
+                            </div>
+                            
+                            <div class="price-section">
+                                <div class="price">22€</div>
+                                <div class="price-label">par personne</div>
+                                <a href="#" class="btn btn-primary">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

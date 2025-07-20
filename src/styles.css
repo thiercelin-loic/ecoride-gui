@@ -1,0 +1,689 @@
+/* Global Styles - EcoRide */
+
+/* Import Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+/* CSS Variables for EcoRide Theme */
+:root {
+  /* Primary Colors - Enhanced for better contrast */
+  --eco-primary: #2E7D32;        /* Darker green for better contrast (7.4:1 ratio) */
+  --eco-primary-dark: #1B5E20;   /* Very dark green for high contrast */
+  --eco-primary-light: #4CAF50;  /* Original green for decorative elements */
+  --eco-secondary: #66BB6A;      /* Lighter green for secondary elements */
+  --eco-accent: #C8E6C9;
+  
+  /* Background Colors */
+  --eco-bg-primary: #F1F8E9;
+  --eco-bg-secondary: #F9FBE7;
+  --eco-bg-white: #FFFFFF;
+  
+  /* Text Colors - Enhanced for WCAG AA compliance */
+  --eco-text-primary: #1B5E20;   /* Dark green for primary text (12.6:1 ratio) */
+  --eco-text-secondary: #2E7D32; /* Medium green for secondary text (7.4:1 ratio) */
+  --eco-text-muted: #555555;     /* Darker gray for better contrast (7.0:1 ratio) */
+  --eco-text-light: #757575;     /* Darker light text for accessibility (4.54:1 ratio) */
+  
+  /* Status Colors */
+  --eco-success: #4CAF50;
+  --eco-warning: #FF9800;
+  --eco-danger: #F44336;
+  --eco-info: #2196F3;
+  
+  /* Shadows */
+  --eco-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --eco-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --eco-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --eco-shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.1);
+  
+  /* Border Radius */
+  --eco-radius-sm: 4px;
+  --eco-radius-md: 8px;
+  --eco-radius-lg: 12px;
+  --eco-radius-xl: 16px;
+  --eco-radius-full: 50%;
+  
+  /* Transitions */
+  --eco-transition-fast: 0.15s ease;
+  --eco-transition-normal: 0.3s ease;
+  --eco-transition-slow: 0.5s ease;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--eco-text-primary);
+  background-color: var(--eco-bg-primary);
+  margin: 0;
+  padding: 0;
+  /* Prevent text flickering during loading */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent layout shift */
+  overflow-x: hidden;
+  /* Improve text rendering */
+  text-rendering: optimizeLegibility;
+  /* Prevent font loading flash */
+  font-display: swap;
+}
+
+/* Font loading states */
+body:not(.fonts-loaded) {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body.fonts-loaded {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Bootstrap Customizations */
+.btn-primary {
+  background-color: var(--eco-primary);
+  border-color: var(--eco-primary);
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--eco-primary-dark);
+  border-color: var(--eco-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--eco-shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--eco-secondary);
+  border-color: var(--eco-secondary);
+  color: white;
+}
+
+.btn-outline-primary {
+  color: var(--eco-primary);
+  border-color: var(--eco-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--eco-primary);
+  border-color: var(--eco-primary);
+}
+
+/* Custom Bootstrap Classes */
+.bg-eco-primary { background-color: var(--eco-primary) !important; }
+.bg-eco-primary-dark { background-color: var(--eco-primary-dark) !important; }
+.bg-eco-primary-light { background-color: var(--eco-primary-light) !important; }
+.bg-eco-secondary { background-color: var(--eco-bg-secondary) !important; }
+
+.text-eco-primary { color: var(--eco-primary) !important; }
+.text-eco-primary-dark { color: var(--eco-primary-dark) !important; }
+.text-eco-secondary { color: var(--eco-text-secondary) !important; }
+
+/* Custom Components */
+.eco-card {
+  background: var(--eco-bg-white);
+  border-radius: var(--eco-radius-lg);
+  box-shadow: var(--eco-shadow-md);
+  border: 1px solid rgba(76, 175, 80, 0.1);
+  transition: all var(--eco-transition-normal);
+}
+
+.eco-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--eco-shadow-lg);
+}
+
+.eco-badge {
+  background: linear-gradient(135deg, var(--eco-primary), var(--eco-primary-light));
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--eco-radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.eco-gradient {
+  background: linear-gradient(135deg, var(--eco-primary), var(--eco-primary-light));
+}
+
+.eco-gradient-bg {
+  background: linear-gradient(135deg, var(--eco-bg-primary), var(--eco-bg-secondary));
+}
+
+/* Form Styling */
+.form-control {
+  border: 2px solid #E0E0E0;
+  border-radius: var(--eco-radius-md);
+  transition: all var(--eco-transition-normal);
+}
+
+.form-control:focus {
+  border-color: var(--eco-primary);
+  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--eco-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation */
+.navbar-eco {
+  background: linear-gradient(135deg, var(--eco-primary), var(--eco-primary-light));
+  box-shadow: var(--eco-shadow-md);
+}
+
+.navbar-eco .navbar-brand,
+.navbar-eco .nav-link {
+  color: white !important;
+  transition: all var(--eco-transition-fast);
+}
+
+.navbar-eco .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--eco-radius-sm);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--eco-primary), var(--eco-primary-light));
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q50,5 80,20 Q95,50 80,80 Q50,95 20,80 Q5,50 20,20 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
+  opacity: 0.1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease forwards;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Page Transitions */
+.page-transition {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Trip Cards */
+.trip-card {
+  background: var(--eco-bg-white);
+  border: 1px solid rgba(76, 175, 80, 0.1);
+  border-radius: var(--eco-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all var(--eco-transition-normal);
+  position: relative;
+}
+
+.trip-card:hover {
+  border-color: var(--eco-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--eco-shadow-lg);
+}
+
+.driver-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--eco-radius-full);
+  background: linear-gradient(135deg, var(--eco-primary), var(--eco-primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+/* Rating Stars */
+.rating-stars {
+  color: #FFD700;
+  font-size: 0.9rem;
+}
+
+/* Status Indicators */
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--eco-radius-full);
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.status-available { background-color: var(--eco-success); }
+.status-full { background-color: var(--eco-warning); }
+.status-cancelled { background-color: var(--eco-danger); }
+
+/* Footer */
+.footer-eco {
+  background-color: var(--eco-primary-dark);
+  color: white;
+  padding: 3rem 0 1rem;
+}
+
+.footer-eco a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color var(--eco-transition-fast);
+}
+
+.footer-eco a:hover {
+  color: white;
+}
+
+/* Accessibility Enhancements */
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Enhanced focus indicators for better accessibility */
+*:focus {
+  outline: 3px solid var(--eco-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Specific focus styles for different elements */
+button:focus,
+.btn:focus {
+  outline: 3px solid var(--eco-primary);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+a:focus {
+  outline: 3px solid var(--eco-primary);
+  outline-offset: 2px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--eco-primary) !important;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.25) !important;
+  outline: 2px solid var(--eco-primary);
+  outline-offset: 1px;
+}
+
+/* Navigation focus styles */
+.nav-link:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--eco-radius-sm);
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Ensure text meets contrast requirements */
+.text-muted {
+  color: var(--eco-text-muted) !important;
+}
+
+.text-light {
+  color: var(--eco-text-light) !important;
+}
+
+/* Error states with better contrast */
+.is-invalid {
+  border-color: #DC3545 !important;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25) !important;
+}
+
+.invalid-feedback {
+  color: #842029 !important;
+  font-weight: 500;
+}
+
+/* Loading and status indicators */
+.spinner-border {
+  color: var(--eco-primary) !important;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip links */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--eco-primary);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* High contrast mode improvements */
+@media (prefers-contrast: high) {
+  :root {
+    --eco-primary: #1B5E20;
+    --eco-primary-dark: #0D2F17;
+    --eco-text-primary: #000000;
+    --eco-text-secondary: #1B5E20;
+    --eco-text-muted: #333333;
+    --eco-text-light: #666666;
+  }
+  
+  .btn-primary {
+    border: 2px solid #000000;
+  }
+  
+  .eco-card {
+    border: 2px solid #000000;
+  }
+}
+
+/* Reduced motion improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Keep essential focus transitions */
+  *:focus {
+    transition: outline 0.1s ease !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --eco-bg-primary: #1a1a1a;
+    --eco-bg-white: #2d2d2d;
+    --eco-text-primary: #ffffff;
+    --eco-text-secondary: #e0e0e0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .trip-card {
+    padding: 1rem;
+  }
+  
+  /* Enhanced focus styles for mobile - wider highlights for better touch interaction */
+  *:focus {
+    outline: 4px solid var(--eco-primary);
+    outline-offset: 3px;
+  }
+
+  /* Enhanced focus styles for links on mobile */
+  a:focus {
+    outline: 5px solid var(--eco-primary);
+    outline-offset: 3px;
+    border-radius: var(--eco-radius-sm);
+  }
+
+  /* Focus styles for navigation links on mobile */
+  .nav-link:focus {
+    outline: 4px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 3px;
+    border-radius: var(--eco-radius-sm);
+  }
+
+  /* Focus styles for button links on mobile */
+  .btn:focus {
+    outline: 5px solid var(--eco-primary);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 5px rgba(76, 175, 80, 0.2);
+  }
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Prevent blinking */
+.no-blink {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* Prevent flash of unstyled content */
+.fade-in-delayed {
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+}
+
+/* Additional reduced motion class for JavaScript control */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Ensure content is always visible for reduced motion users */
+.reduce-motion .fade-in,
+.reduce-motion .slide-in,
+.reduce-motion .loading-screen {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Performance optimizations */
+.hero-section,
+.loading-screen,
+.navbar-eco {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Prevent content jumping during async operations */
+.async-content {
+  min-height: 200px;
+  transition: min-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.async-content.loaded {
+  min-height: auto;
+}
+
+/* Smooth state transitions */
+.state-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent button state blinking */
+.btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover,
+.btn:focus {
+  transition-duration: 0.1s;
+}
+
+/* Smooth form field transitions */
+.form-control {
+  transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent flash during component mounting */
+.component-mount {
+  opacity: 0;
+  animation: mountFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes mountFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Global transitioning state */
+body.transitioning {
+  pointer-events: none;
+}
+
+body.transitioning * {
+  transition-duration: 0.1s !important;
+}
+
+/* Smooth cursor transitions */
+* {
+  cursor: inherit;
+}
+
+button, .btn, a[href], [role="button"] {
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent text selection blinking */
+::selection {
+  background-color: rgba(76, 175, 80, 0.3);
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgba(76, 175, 80, 0.3);
+  color: inherit;
+}

@@ -1,0 +1,8 @@
+.not-found-container {
+  background: linear-gradient(135deg, var(--eco-bg-primary), var(--eco-bg-secondary));
+  min-height: 100vh;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}

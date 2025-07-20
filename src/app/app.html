@@ -1,0 +1,43 @@
+<!-- Loading Screen -->
+<div 
+  *ngIf="isLoading" 
+  class="loading-screen"
+  [class.fade-out]="loadingComplete"
+  style="top: 0; left: 0; background: linear-gradient(135deg, #4CAF50, #66BB6A); z-index: 9999;"
+  aria-hidden="true">
+  <div class="text-center text-white">
+    <div class="spinner-border mb-3" role="status">
+      <span class="visually-hidden">Chargement...</span>
+    </div>
+    <h4>{{ title }}</h4>
+    <p>Votre plateforme de covoiturage écologique</p>
+  </div>
+</div>
+
+<!-- Skip Navigation Link for Accessibility -->
+<a href="#main-content" class="visually-hidden-focusable btn btn-primary">
+  Aller au contenu principal
+</a>
+
+<!-- Main Application -->
+<div *ngIf="!isLoading" class="fade-in">
+  <!-- Navigation -->
+  <app-navbar 
+    [currentRoute]="currentRoute"
+    [showBackButton]="showBackButton" 
+    [backRoute]="backRoute" 
+    [backLabel]="backLabel">
+  </app-navbar>
+  
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <div class="content-container">
+      <div class="route-container">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>

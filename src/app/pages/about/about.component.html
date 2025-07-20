@@ -1,0 +1,248 @@
+<!-- Hero Section -->
+<section class="hero-section py-5">
+  <div class="container">
+    <div class="row align-items-center min-vh-50">
+      <div class="col-12 text-center">
+        <div class="fade-in">
+          <h1 class="display-4 fw-bold text-white mb-4">
+            À propos d'<span class="text-warning">EcoRide</span>
+          </h1>
+          <p class="lead text-white-50 mb-4">
+            La plateforme de covoiturage qui révolutionne vos déplacements
+            tout en préservant notre planète
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Presentation -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center mb-5">
+        <h2 class="h1 text-eco-primary mb-4">Notre Mission</h2>
+        <p class="lead text-eco-secondary">
+          Créée en 2024, EcoRide est une startup française innovante qui transforme 
+          la façon dont nous voyageons. Notre objectif : réduire l'impact environnemental 
+          des déplacements en encourageant le covoiturage écologique.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-md-6">
+        <div class="eco-card h-100 p-4">
+          <div class="mb-3">
+            <svg width="48" height="48" fill="var(--eco-primary)" viewBox="0 0 24 24">
+              <path d="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM11,19.93c-3.94,-0.49 -7,-3.85 -7,-7.93 0,-0.62 0.08,-1.21 0.21,-1.79L9,15v1c0,1.1 0.9,2 2,2v1.93zM17.9,17.39c-0.26,-0.81 -1,-1.39 -1.9,-1.39h-1v-3c0,-0.55 -0.45,-1 -1,-1H8v-2h2c0.55,0 1,-0.45 1,-1V7h2c1.1,0 2,-0.9 2,-2v-0.41c2.93,1.19 5,4.06 5,7.41 0,2.08 -0.8,3.97 -2.1,5.39z" />
+            </svg>
+          </div>
+          <h4 class="text-eco-primary mb-3">Vision Écologique</h4>
+          <p class="text-muted">
+            Nous croyons fermement que le transport partagé est l'avenir. 
+            En privilégiant les véhicules électriques et en optimisant les trajets, 
+            nous contribuons activement à la réduction des émissions de CO2.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="eco-card h-100 p-4">
+          <div class="mb-3">
+            <svg width="48" height="48" fill="var(--eco-primary)" viewBox="0 0 24 24">
+              <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+            </svg>
+          </div>
+          <h4 class="text-eco-primary mb-3">Communauté Engagée</h4>
+          <p class="text-muted">
+            Plus qu'une simple plateforme, EcoRide rassemble une communauté 
+            de voyageurs conscients de leur impact environnemental et désireux 
+            de voyager de manière responsable et économique.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="py-5 bg-eco-secondary">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="h1 text-eco-primary mb-3">EcoRide en Chiffres</h2>
+        <p class="lead text-eco-secondary">
+          Des résultats qui témoignent de notre engagement
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-6 col-md-3 text-center" *ngFor="let stat of stats">
+        <div class="stat-card p-4">
+          <div class="stat-value text-eco-primary fw-bold mb-2">
+            {{ stat.value }}
+          </div>
+          <div class="stat-label text-muted">
+            {{ stat.label }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="h1 text-eco-primary mb-3">Notre Équipe</h2>
+        <p class="lead text-eco-secondary">
+          Des experts passionnés au service de la mobilité durable
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let member of teamMembers">
+        <div class="team-card text-center p-4">
+          <div class="team-avatar mx-auto mb-3">
+            {{ member.image }}
+          </div>
+          <h5 class="text-eco-primary mb-1">{{ member.name }}</h5>
+          <p class="text-eco-secondary fw-medium mb-3">{{ member.role }}</p>
+          <p class="text-muted small">{{ member.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="h1 text-eco-primary mb-3">Notre Parcours</h2>
+        <p class="lead text-eco-secondary">
+          De l'idée à la réalisation, découvrez l'évolution d'EcoRide
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="timeline">
+          <div class="timeline-item" *ngFor="let milestone of milestones; let i = index" [class.timeline-item-right]="i % 2 === 1">
+            <div class="timeline-marker">
+              <div class="timeline-year">{{ milestone.year }}</div>
+            </div>
+            <div class="timeline-content">
+              <h5 class="text-eco-primary mb-2">{{ milestone.title }}</h5>
+              <p class="text-muted mb-0">{{ milestone.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="h1 text-eco-primary mb-3">Nos Valeurs</h2>
+        <p class="lead text-eco-secondary">
+          Les principes qui guident chacune de nos actions
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="value-card text-center p-4">
+          <div class="mb-3">
+            <svg width="48" height="48" fill="var(--eco-primary)" viewBox="0 0 24 24">
+              <path d="M12,2L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
+            </svg>
+          </div>
+          <h5 class="text-eco-primary mb-3">Transparence</h5>
+          <p class="text-muted small">
+            Nous privilégions la transparence dans tous nos échanges et processus.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="value-card text-center p-4">
+          <div class="mb-3">
+            <svg width="48" height="48" fill="var(--eco-primary)" viewBox="0 0 24 24">
+              <path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z" />
+            </svg>
+          </div>
+          <h5 class="text-eco-primary mb-3">Innovation</h5>
+          <p class="text-muted small">
+            Nous développons constamment de nouvelles solutions pour améliorer l'expérience.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="value-card text-center p-4">
+          <div class="mb-3">
+            <svg width="48" height="48" fill="var(--eco-primary)" viewBox="0 0 24 24">
+              <path d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+            </svg>
+          </div>
+          <h5 class="text-eco-primary mb-3">Durabilité</h5>
+          <p class="text-muted small">
+            Chaque décision est prise en considérant son impact environnemental.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="value-card text-center p-4">
+          <div class="mb-3">
+            <svg width="48" height="48" fill="var(--eco-primary)" viewBox="0 0 24 24">
+              <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
+            </svg>
+          </div>
+          <h5 class="text-eco-primary mb-3">Bienveillance</h5>
+          <p class="text-muted small">
+            Nous cultivons un environnement respectueux et solidaire pour tous.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 eco-gradient text-white">
+  <div class="container text-center">
+    <h2 class="h1 mb-3">Rejoignez l'Aventure EcoRide</h2>
+    <p class="lead mb-4">
+      Ensemble, construisons un avenir plus durable pour nos déplacements
+    </p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a routerLink="/auth/register" class="btn btn-light btn-lg">
+        <svg width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 24 24">
+          <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+        </svg>
+        Rejoindre la communauté
+      </a>
+      <a routerLink="/search" class="btn btn-outline-light btn-lg">
+        <svg width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 24 24">
+          <path d="M15.5,14H14.71L14.43,13.73C15.41,12.59 16,11.11 16,9.5A6.5,6.5 0 0,0 9.5,3A6.5,6.5 0 0,0 3,9.5A6.5,6.5 0 0,0 9.5,16C11.11,16 12.59,15.41 13.73,14.43L14,14.71V15.5L20,21.5L21.5,20L15.5,14M9.5,14C7.01,14 5,11.99 5,9.5C5,7.01 7.01,5 9.5,5C11.99,5 14,7.01 14,9.5C14,11.99 11.99,14 9.5,14Z" />
+        </svg>
+        Découvrir les trajets
+      </a>
+    </div>
+  </div>
+</section>

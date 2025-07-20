@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRide - Mobile Mockups</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1B5E20;
+            background-color: #F1F8E9;
+            padding: 20px;
+        }
+        
+        .mockup-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .mockup {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            overflow: hidden;
+            border: 1px solid #E8F5E8;
+        }
+        
+        .mockup-title {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .mobile-frame {
+            width: 375px;
+            height: 812px;
+            background: #000;
+            border-radius: 25px;
+            padding: 8px;
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        .mobile-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .mobile-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 25px;
+            background: #000;
+            border-radius: 0 0 15px 15px;
+            z-index: 10;
+        }
+        
+        .mobile-header {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 35px 20px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-nav-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .mobile-logo {
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .mobile-content {
+            flex: 1;
+            overflow-y: auto;
+            background: white;
+        }
+        
+        .hero-mobile {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .hero-mobile h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .hero-mobile p {
+            font-size: 16px;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+        
+        .btn-mobile {
+            background: white;
+            color: #2E7D32;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+        
+        .search-section-mobile {
+            background: white;
+            padding: 20px;
+            margin: -20px 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .search-section-mobile h3 {
+            text-align: center;
+            color: #2E7D32;
+            margin-bottom: 20px;
+        }
+        
+        .form-group-mobile {
+            margin-bottom: 16px;
+        }
+        
+        .form-group-mobile label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #2E7D32;
+            font-size: 14px;
+        }
+        
+        .form-input-mobile {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .search-btn-mobile {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .features-mobile {
+            padding: 30px 20px;
+            background: #F9FBE7;
+        }
+        
+        .features-mobile h3 {
+            text-align: center;
+            color: #2E7D32;
+            margin-bottom: 20px;
+        }
+        
+        .features-grid-mobile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .feature-card-mobile {
+            background: white;
+            padding: 20px 16px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .feature-icon-mobile {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        
+        .feature-card-mobile h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2E7D32;
+        }
+        
+        .feature-card-mobile p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .stats-mobile {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .stats-mobile h3 {
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid-mobile {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-mobile {
+            text-align: center;
+        }
+        
+        .stat-number-mobile {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        
+        .stat-label-mobile {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+        
+        .cta-mobile {
+            background: white;
+            color: #2E7D32;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer-mobile {
+            background: #1B5E20;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer-mobile a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        
+        /* Dashboard Mobile */
+        .sidebar-mobile {
+            background: #F9FBE7;
+            padding: 20px;
+        }
+        
+        .user-profile-mobile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .avatar-mobile {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .credits-card-mobile {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .credits-number {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 8px 0;
+        }
+        
+        .nav-menu-mobile {
+            list-style: none;
+        }
+        
+        .nav-menu-mobile li {
+            margin-bottom: 12px;
+        }
+        
+        .nav-menu-mobile a {
+            color: #2E7D32;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-menu-mobile a.active {
+            background: white;
+            font-weight: 600;
+        }
+        
+        .dashboard-content-mobile {
+            padding: 20px;
+        }
+        
+        .welcome-card-mobile {
+            background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .quick-stats-mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card-mobile {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #E0E0E0;
+        }
+        
+        .trip-card-mobile {
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .trip-header-mobile {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .trip-status {
+            background: #4CAF50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        
+        .action-grid-mobile {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .action-card-mobile {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #E0E0E0;
+        }
+        
+        .action-icon-mobile {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mockup-container">
+        
+        <!-- Mobile Home Page Mockup -->
+        <div class="mockup">
+            <div class="mockup-title">
+                <i class="fas fa-mobile-alt"></i> Mockup 5: Mobile Home Page
+            </div>
+            
+            <div class="mobile-frame">
+                <div class="mobile-screen">
+                    <div class="mobile-notch"></div>
+                    
+                    <div class="mobile-header">
+                        <div class="mobile-nav-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <div class="mobile-logo">
+                            <i class="fas fa-leaf"></i>
+                            EcoRide
+                        </div>
+                        <div class="mobile-nav-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-content">
+                        <div class="hero-mobile">
+                            <div style="font-size: 48px; margin-bottom: 16px;">🚗</div>
+                            <h1>Réduisez votre impact environnemental</h1>
+                            <p>La plateforme de covoiturage écologique pour voyageurs conscients</p>
+                            <button class="btn-mobile">
+                                <i class="fas fa-route"></i>
+                                COMMENCER
+                            </button>
+                        </div>
+                        
+                        <div class="search-section-mobile">
+                            <h3>TROUVER UN TRAJET</h3>
+                            
+                            <div class="form-group-mobile">
+                                <label>Départ</label>
+                                <input type="text" class="form-input-mobile" placeholder="🔍 Paris, Gare de Lyon">
+                            </div>
+                            
+                            <div class="form-group-mobile">
+                                <label>Arrivée</label>
+                                <input type="text" class="form-input-mobile" placeholder="🔍 Lyon, Part-Dieu">
+                            </div>
+                            
+                            <div class="form-group-mobile">
+                                <label>Quand</label>
+                                <input type="date" class="form-input-mobile" value="2025-07-16">
+                            </div>
+                            
+                            <button class="search-btn-mobile">
+                                🔍 RECHERCHER DES COVOITURAGES
+                            </button>
+                            
+                            <div style="text-align: center; margin-top: 12px;">
+                                Ou <a href="#" style="color: #4CAF50; font-weight: 600;">➕ Proposer un trajet</a>
+                            </div>
+                        </div>
+                        
+                        <div class="features-mobile">
+                            <h3>POURQUOI ECORIDE?</h3>
+                            <div class="features-grid-mobile">
+                                <div class="feature-card-mobile">
+                                    <div class="feature-icon-mobile">🌱</div>
+                                    <h4>Écologique</h4>
+                                    <p>Réduisez les émissions CO2</p>
+                                </div>
+                                <div class="feature-card-mobile">
+                                    <div class="feature-icon-mobile">💰</div>
+                                    <h4>Économique</h4>
+                                    <p>Partagez les coûts</p>
+                                </div>
+                                <div class="feature-card-mobile">
+                                    <div class="feature-icon-mobile">👥</div>
+                                    <h4>Communauté</h4>
+                                    <p>Rencontrez des gens</p>
+                                </div>
+                                <div class="feature-card-mobile">
+                                    <div class="feature-icon-mobile">⭐</div>
+                                    <h4>Fiable</h4>
+                                    <p>Conducteurs vérifiés</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-mobile">
+                            <h3>NOTRE IMPACT</h3>
+                            <div class="stats-grid-mobile">
+                                <div class="stat-mobile">
+                                    <div class="stat-number-mobile">1,000+</div>
+                                    <div class="stat-label-mobile">Utilisateurs</div>
+                                </div>
+                                <div class="stat-mobile">
+                                    <div class="stat-number-mobile">500+</div>
+                                    <div class="stat-label-mobile">Trajets Éco</div>
+                                </div>
+                                <div class="stat-mobile">
+                                    <div class="stat-number-mobile">50%</div>
+                                    <div class="stat-label-mobile">CO2 Économisé</div>
+                                </div>
+                            </div>
+                            <div style="font-size: 24px; font-weight: 700;">4.8⭐</div>
+                            <div style="font-size: 12px;">Note moyenne</div>
+                        </div>
+                        
+                        <div class="cta-mobile">
+                            <h3 style="color: #2E7D32; margin-bottom: 16px;">PRÊT À COMMENCER?</h3>
+                            <p style="color: #666; margin-bottom: 20px;">Rejoignez des milliers de voyageurs eco-responsables</p>
+                            <button class="btn-mobile" style="margin-bottom: 12px;">
+                                📱 TÉLÉCHARGER L'APP
+                            </button>
+                            <button class="btn-mobile" style="background: transparent; color: #4CAF50; border: 2px solid #4CAF50;">
+                                🌐 CONTINUER DANS LE NAVIGATEUR
+                            </button>
+                            <div style="margin-top: 16px; font-size: 14px; color: #4CAF50; font-weight: 600;">
+                                Recevez 20 crédits gratuits pour commencer!
+                            </div>
+                        </div>
+                        
+                        <div class="footer-mobile">
+                            <div style="font-weight: 600; margin-bottom: 12px;">EcoRide</div>
+                            <div style="margin-bottom: 12px;">
+                                📧 Contact<br>
+                                <a href="mailto:contact@ecoride.fr">contact@ecoride.fr</a>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                📋 <a href="#">Mentions légales</a>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                                🌐 Suivez-nous: 
+                                <a href="#">[f]</a> 
+                                <a href="#">[t]</a> 
+                                <a href="#">[i]</a>
+                            </div>
+                            <div style="font-size: 11px; opacity: 0.8;">
+                                © 2025 EcoRide. Tous droits réservés.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Dashboard Mockup -->
+        <div class="mockup">
+            <div class="mockup-title">
+                <i class="fas fa-mobile-alt"></i> Mockup 6: Mobile User Dashboard
+            </div>
+            
+            <div class="mobile-frame">
+                <div class="mobile-screen">
+                    <div class="mobile-notch"></div>
+                    
+                    <div class="mobile-header">
+                        <div class="mobile-nav-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <div class="mobile-logo">
+                            <i class="fas fa-leaf"></i>
+                            Tableau de bord
+                        </div>
+                        <div class="mobile-nav-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-content">
+                        <div class="sidebar-mobile">
+                            <div class="user-profile-mobile">
+                                <div class="avatar-mobile">JS</div>
+                                <div style="font-weight: 600; color: #2E7D32;">John Smith</div>
+                                <div style="font-size: 12px; color: #666;">Membre depuis jan 2025</div>
+                            </div>
+                            
+                            <div class="credits-card-mobile">
+                                <div style="font-size: 14px;">💳 SOLDE CRÉDITS</div>
+                                <div class="credits-number">45</div>
+                                <button style="background: white; color: #4CAF50; border: none; padding: 8px 16px; border-radius: 16px; font-size: 12px; font-weight: 600;">
+                                    Acheter plus
+                                </button>
+                            </div>
+                            
+                            <ul class="nav-menu-mobile">
+                                <li><a href="#" class="active"><i class="fas fa-home"></i> Tableau de bord</a></li>
+                                <li><a href="#"><i class="fas fa-car"></i> Mes trajets</a></li>
+                                <li><a href="#"><i class="fas fa-plus"></i> Créer un trajet</a></li>
+                                <li><a href="#"><i class="fas fa-user"></i> Profil</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="dashboard-content-mobile">
+                            <div class="welcome-card-mobile">
+                                <h3 style="color: #2E7D32; margin-bottom: 8px;">Bonjour, John! 👋</h3>
+                                <p style="color: #666; font-size: 14px;">Prêt pour votre prochaine aventure écologique?</p>
+                            </div>
+                            
+                            <div class="quick-stats-mobile">
+                                <div class="stat-card-mobile">
+                                    <div style="font-size: 20px; font-weight: 700; color: #4CAF50;">12</div>
+                                    <div style="font-size: 12px; color: #666;">Trajets</div>
+                                </div>
+                                <div class="stat-card-mobile">
+                                    <div style="font-size: 20px; font-weight: 700; color: #4CAF50;">€145</div>
+                                    <div style="font-size: 12px; color: #666;">Économisés</div>
+                                </div>
+                                <div class="stat-card-mobile">
+                                    <div style="font-size: 20px; font-weight: 700; color: #4CAF50;">245kg</div>
+                                    <div style="font-size: 12px; color: #666;">CO2 évité</div>
+                                </div>
+                                <div class="stat-card-mobile">
+                                    <div style="font-size: 20px; font-weight: 700; color: #4CAF50;">4.8⭐</div>
+                                    <div style="font-size: 12px; color: #666;">Note</div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <h3 style="color: #2E7D32; margin-bottom: 12px; font-size: 16px;">
+                                    📅 Prochains trajets (2)
+                                    <span style="float: right; font-size: 12px; font-weight: normal;">
+                                        <a href="#" style="color: #4CAF50; text-decoration: none;">Voir tout →</a>
+                                    </span>
+                                </h3>
+                                
+                                <div class="trip-card-mobile">
+                                    <div class="trip-header-mobile">
+                                        <div>
+                                            <div style="font-weight: 600; font-size: 14px;">Demain, 17 juillet</div>
+                                            <div style="font-size: 12px; color: #666;">🚗 Paris → Lyon</div>
+                                        </div>
+                                        <div class="trip-status">Confirmé</div>
+                                    </div>
+                                    <div style="font-size: 12px; color: #666; margin-bottom: 8px;">
+                                        ⏰ Départ: 09:00 | 👤 Marie D. (4.9⭐)
+                                    </div>
+                                    <div style="display: flex; gap: 8px;">
+                                        <button style="flex: 1; padding: 8px; background: #4CAF50; color: white; border: none; border-radius: 4px; font-size: 12px;">Contacter</button>
+                                        <button style="flex: 1; padding: 8px; background: transparent; color: #4CAF50; border: 1px solid #4CAF50; border-radius: 4px; font-size: 12px;">Annuler</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="trip-card-mobile">
+                                    <div class="trip-header-mobile">
+                                        <div>
+                                            <div style="font-weight: 600; font-size: 14px;">22 juillet</div>
+                                            <div style="font-size: 12px; color: #666;">🚗 Lyon → Marseille</div>
+                                        </div>
+                                        <div class="trip-status" style="background: #FF9800;">Votre trajet</div>
+                                    </div>
+                                    <div style="font-size: 12px; color: #666; margin-bottom: 8px;">
+                                        ⏰ Départ: 14:30 | 💺 2/4 places réservées
+                                    </div>
+                                    <div style="display: flex; gap: 8px;">
+                                        <button style="flex: 1; padding: 8px; background: #4CAF50; color: white; border: none; border-radius: 4px; font-size: 12px;">Gérer</button>
+                                        <button style="flex: 1; padding: 8px; background: #2E7D32; color: white; border: none; border-radius: 4px; font-size: 12px;">Démarrer</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="action-grid-mobile">
+                                <div class="action-card-mobile">
+                                    <div class="action-icon-mobile">🔍</div>
+                                    <div style="font-size: 12px; font-weight: 600; color: #2E7D32;">CHERCHER</div>
+                                    <div style="font-size: 10px; color: #666;">Un trajet</div>
+                                </div>
+                                <div class="action-card-mobile">
+                                    <div class="action-icon-mobile">➕</div>
+                                    <div style="font-size: 12px; font-weight: 600; color: #2E7D32;">CRÉER</div>
+                                    <div style="font-size: 10px; color: #666;">Un trajet</div>
+                                </div>
+                                <div class="action-card-mobile">
+                                    <div class="action-icon-mobile">👥</div>
+                                    <div style="font-size: 12px; font-weight: 600; color: #2E7D32;">INVITER</div>
+                                    <div style="font-size: 10px; color: #666;">Des amis</div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: linear-gradient(135deg, #E8F5E8, #C8E6C9); padding: 16px; border-radius: 8px; text-align: center; margin: 20px 0;">
+                                <h4 style="color: #2E7D32; margin-bottom: 8px;">VOTRE IMPACT ÉCO CE MOIS 🌱</h4>
+                                <div style="font-size: 32px; margin: 12px 0;">75%</div>
+                                <div style="font-size: 12px; color: #666; margin-bottom: 8px;">
+                                    CO2 économisé: 45 kg / Objectif: 60 kg
+                                </div>
+                                <div style="background: #4CAF50; height: 8px; border-radius: 4px; margin: 8px 0;">
+                                    <div style="background: #2E7D32; height: 100%; width: 75%; border-radius: 4px;"></div>
+                                </div>
+                                <div style="font-size: 11px; color: #4CAF50; font-weight: 600;">
+                                    🏆 Top 20% des éco-conducteurs!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

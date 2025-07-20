@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRide - Additional Mockups</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1B5E20;
+            background-color: #F1F8E9;
+        }
+        
+        .mockup-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .mockup {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            overflow: hidden;
+            border: 1px solid #E8F5E8;
+        }
+        
+        .mockup-title {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .browser-frame {
+            background: #f5f5f5;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .browser-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27ca3f; }
+        
+        .browser-url {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 12px;
+            color: #666;
+            margin-left: 20px;
+            flex: 1;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a.active {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: #2E7D32;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Detailed View Styles */
+        .breadcrumb {
+            padding: 16px 24px;
+            background: #F9FBE7;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            padding: 24px;
+        }
+        
+        .detail-card {
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-card h3 {
+            color: #2E7D32;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .map-placeholder {
+            background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4CAF50;
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .route-details {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .route-point {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #F9FBE7;
+            border-radius: 8px;
+        }
+        
+        .route-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #4CAF50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        .driver-profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .driver-avatar-large {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+        }
+        
+        .preferences-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .preference-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            background: #F9FBE7;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .vehicle-image {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #1976D2;
+            margin-bottom: 16px;
+        }
+        
+        .booking-card {
+            position: sticky;
+            top: 24px;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .booking-card h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        
+        .form-input, .form-select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        .form-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .price-breakdown {
+            background: rgba(255,255,255,0.1);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .price-total {
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 8px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .book-btn {
+            width: 100%;
+            background: white;
+            color: #2E7D32;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .book-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Reviews Section */
+        .reviews-section {
+            grid-column: 1 / -1;
+            margin-top: 24px;
+        }
+        
+        .review-item {
+            background: #F9FBE7;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4CAF50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        /* Registration Styles */
+        .registration-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+        
+        .benefits-section {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .benefits-section h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        .form-section {
+            padding: 40px;
+            background: white;
+        }
+        
+        .form-section h2 {
+            color: #2E7D32;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .form-group-registration {
+            margin-bottom: 20px;
+        }
+        
+        .form-group-registration label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #2E7D32;
+        }
+        
+        .form-input-registration {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E0E0E0;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input-registration:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        
+        .password-strength {
+            margin-top: 6px;
+            font-size: 12px;
+        }
+        
+        .strength-bar {
+            height: 4px;
+            background: #E0E0E0;
+            border-radius: 2px;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+        
+        .strength-fill {
+            height: 100%;
+            background: #4CAF50;
+            width: 80%;
+            transition: width 0.3s ease;
+        }
+        
+        .checkbox-group {
+            margin: 20px 0;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 24px 0;
+            position: relative;
+            color: #666;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #E0E0E0;
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 16px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .registration-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .preferences-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mockup-container">
+        
+        <!-- Mockup 3: Carpool Details -->
+        <div class="mockup">
+            <div class="mockup-title">
+                <i class="fas fa-info-circle"></i> Mockup 3: Carpool Details (US 5)
+            </div>
+            <div class="browser-frame">
+                <div class="browser-controls">
+                    <div class="browser-dot dot-red"></div>
+                    <div class="browser-dot dot-yellow"></div>
+                    <div class="browser-dot dot-green"></div>
+                    <div class="browser-url">https://ecoride.fr/carpool/details/789123</div>
+                </div>
+            </div>
+            
+            <header class="header">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    EcoRide
+                </div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#" class="active">Rechercher</a></li>
+                        <li><a href="#">À propos</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-user"></i>
+                        Jean Dupont
+                    </a>
+                </div>
+            </header>
+            
+            <div class="breadcrumb">
+                Accueil > Résultats de recherche > Détails du covoiturage
+            </div>
+            
+            <div class="detail-layout">
+                <div>
+                    <!-- Trip Overview -->
+                    <div class="detail-card">
+                        <h3><i class="fas fa-route"></i> Aperçu du trajet</h3>
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="route-details">
+                            <div class="route-point">
+                                <div class="route-icon">
+                                    <i class="fas fa-circle"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">Paris, Gare de Lyon</div>
+                                    <div style="color: #666; font-size: 14px;">20 juillet 2025 à 09:00</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: center; color: #4CAF50;">
+                                <i class="fas fa-arrow-down"></i>
+                            </div>
+                            <div class="route-point">
+                                <div class="route-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">Lyon, Part-Dieu</div>
+                                    <div style="color: #666; font-size: 14px;">20 juillet 2025 à 13:30</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center;">
+                            <div>
+                                <div style="font-weight: 600; color: #4CAF50;">4h 30min</div>
+                                <div style="font-size: 14px; color: #666;">Durée</div>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; color: #4CAF50;">463 km</div>
+                                <div style="font-size: 14px; color: #666;">Distance</div>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; color: #4CAF50;">2/4</div>
+                                <div style="font-size: 14px; color: #666;">Places disponibles</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 16px; text-align: center;">
+                            <span style="background: linear-gradient(135deg, #4CAF50, #66BB6A); color: white; padding: 8px 16px; border-radius: 20px; font-weight: 600;">
+                                <i class="fas fa-leaf"></i> TRAJET ÉCOLOGIQUE - Véhicule électrique
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Driver Information -->
+                    <div class="detail-card">
+                        <h3><i class="fas fa-user"></i> Informations du conducteur</h3>
+                        <div class="driver-profile">
+                            <div class="driver-avatar-large">JD</div>
+                            <div>
+                                <div style="font-size: 24px; font-weight: 600; margin-bottom: 4px;">Jean Dupont</div>
+                                <div style="color: #FFD700; margin-bottom: 4px;">⭐⭐⭐⭐⭐ 4.8/5 (127 avis)</div>
+                                <div style="color: #666; font-size: 14px;">Membre depuis mars 2023</div>
+                                <div style="color: #4CAF50; font-size: 14px; margin-top: 4px;">
+                                    <i class="fas fa-check-circle"></i> Conducteur vérifié
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 style="margin-bottom: 12px; color: #2E7D32;">Préférences du conducteur:</h4>
+                            <div class="preferences-grid">
+                                <div class="preference-item">
+                                    <i class="fas fa-smoking-ban" style="color: #4CAF50;"></i>
+                                    <span>Non-fumeur</span>
+                                </div>
+                                <div class="preference-item">
+                                    <i class="fas fa-paw" style="color: #4CAF50;"></i>
+                                    <span>Animaux acceptés</span>
+                                </div>
+                                <div class="preference-item">
+                                    <i class="fas fa-music" style="color: #4CAF50;"></i>
+                                    <span>Musique: Rock classique</span>
+                                </div>
+                                <div class="preference-item">
+                                    <i class="fas fa-comments" style="color: #4CAF50;"></i>
+                                    <span>Conducteur bavard</span>
+                                </div>
+                                <div class="preference-item">
+                                    <i class="fas fa-snowflake" style="color: #4CAF50;"></i>
+                                    <span>Climatisation disponible</span>
+                                </div>
+                                <div class="preference-item">
+                                    <i class="fas fa-wifi" style="color: #4CAF50;"></i>
+                                    <span>WiFi disponible</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary" style="margin-top: 16px;">
+                            <i class="fas fa-envelope"></i>
+                            Contacter le conducteur
+                        </button>
+                    </div>
+                </div>
+                
+                <div>
+                    <!-- Vehicle Information -->
+                    <div class="detail-card">
+                        <h3><i class="fas fa-car"></i> Informations du véhicule</h3>
+                        <div class="vehicle-image">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div style="display: grid; gap: 12px;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: #666;">Modèle:</span>
+                                <span style="font-weight: 600;">Tesla Model 3</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: #666;">Couleur:</span>
+                                <span style="font-weight: 600;">Blanc nacré</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: #666;">Plaque:</span>
+                                <span style="font-weight: 600;">AB-123-CD</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: #666;">Énergie:</span>
+                                <span style="font-weight: 600; color: #4CAF50;">
+                                    <i class="fas fa-bolt"></i> Électrique
+                                </span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: #666;">Année:</span>
+                                <span style="font-weight: 600;">2022</span>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 16px; padding: 16px; background: #F9FBE7; border-radius: 8px;">
+                            <h4 style="color: #2E7D32; margin-bottom: 8px;">Caractéristiques de sécurité:</h4>
+                            <div style="font-size: 14px; color: #666;">
+                                <div><i class="fas fa-check" style="color: #4CAF50;"></i> Note de sécurité 5 étoiles</div>
+                                <div><i class="fas fa-check" style="color: #4CAF50;"></i> Assistance avancée au conducteur</div>
+                                <div><i class="fas fa-check" style="color: #4CAF50;"></i> Airbags multiples</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Booking Card -->
+                    <div class="booking-card">
+                        <h3><i class="fas fa-ticket-alt"></i> Réserver ce trajet</h3>
+                        
+                        <div class="form-group">
+                            <label>Nombre de places:</label>
+                            <select class="form-select">
+                                <option value="1">1 place</option>
+                                <option value="2">2 places</option>
+                            </select>
+                        </div>
+                        
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span>Prix par place:</span>
+                                <span>18,00€ × 1</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Frais de plateforme:</span>
+                                <span>2,00€</span>
+                            </div>
+                            <div class="price-row price-total">
+                                <span>Total:</span>
+                                <span>20,00€</span>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 16px 0; font-size: 14px;">
+                            <div>Crédits requis: <strong>20</strong></div>
+                            <div>Votre solde: <strong style="color: #90EE90;">45 crédits</strong></div>
+                        </div>
+                        
+                        <button class="book-btn">
+                            <i class="fas fa-handshake"></i>
+                            REJOINDRE CE COVOITURAGE
+                        </button>
+                        
+                        <div style="margin-top: 12px; font-size: 12px; text-align: center; opacity: 0.9;">
+                            <i class="fas fa-info-circle"></i>
+                            Annulation gratuite jusqu'à 2h avant le départ
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reviews Section -->
+                <div class="reviews-section">
+                    <div class="detail-card">
+                        <h3><i class="fas fa-star"></i> Avis sur le conducteur (127 avis)</h3>
+                        
+                        <div style="display: flex; gap: 16px; margin-bottom: 20px;">
+                            <select style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                <option>Plus récents</option>
+                                <option>Les mieux notés</option>
+                                <option>Les plus détaillés</option>
+                            </select>
+                            <select style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                <option>Toutes les notes</option>
+                                <option>5 étoiles</option>
+                                <option>4 étoiles et plus</option>
+                            </select>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">ML</div>
+                                <div>
+                                    <div style="font-weight: 600;">Marie Laurent</div>
+                                    <div style="color: #FFD700; font-size: 14px;">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <div style="margin-left: auto; font-size: 12px; color: #666;">
+                                    15 juin 2025
+                                </div>
+                            </div>
+                            <p style="color: #666; margin-bottom: 8px;">
+                                "Excellent conducteur, très ponctuel et sympathique. Voiture propre et trajet agréable. 
+                                Discussion intéressante sur l'écologie. Je recommande vivement Jean!"
+                            </p>
+                            <div style="font-size: 12px; color: #666;">
+                                Trajet: Paris → Lyon
+                            </div>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-avatar" style="background: #FF7043;">TR</div>
+                                <div>
+                                    <div style="font-weight: 600;">Thomas Rousseau</div>
+                                    <div style="color: #FFD700; font-size: 14px;">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <div style="margin-left: auto; font-size: 12px; color: #666;">
+                                    10 juin 2025
+                                </div>
+                            </div>
+                            <p style="color: #666; margin-bottom: 8px;">
+                                "Super trajet! Jean est un conducteur expérimenté et prudent. 
+                                Arrivée à l'heure prévue. Je recommande pour tous ceux qui cherchent un trajet écologique."
+                            </p>
+                            <div style="font-size: 12px; color: #666;">
+                                Trajet: Lyon → Paris
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary" style="margin-top: 16px;">
+                            Voir tous les avis
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mockup 4: User Registration -->
+        <div class="mockup">
+            <div class="mockup-title">
+                <i class="fas fa-user-plus"></i> Mockup 4: User Registration (US 7)
+            </div>
+            <div class="browser-frame">
+                <div class="browser-controls">
+                    <div class="browser-dot dot-red"></div>
+                    <div class="browser-dot dot-yellow"></div>
+                    <div class="browser-dot dot-green"></div>
+                    <div class="browser-url">https://ecoride.fr/register</div>
+                </div>
+            </div>
+            
+            <div style="background: #F1F8E9; padding: 16px 24px; border-bottom: 1px solid #E0E0E0;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="logo">
+                        <i class="fas fa-leaf" style="color: #4CAF50;"></i>
+                        <span style="color: #2E7D32;">EcoRide</span>
+                    </div>
+                    <a href="#" style="color: #4CAF50; text-decoration: none;">
+                        <i class="fas fa-arrow-left"></i> Retour à l'accueil
+                    </a>
+                </div>
+            </div>
+            
+            <div class="registration-layout">
+                <div class="benefits-section">
+                    <h2>Rejoignez la communauté EcoRide</h2>
+                    
+                    <div style="margin-bottom: 32px;">
+                        <div style="width: 120px; height: 120px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 48px;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-gift"></i>
+                        <span>Recevez 20 crédits gratuits pour commencer</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Réduisez votre empreinte carbone</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <span>Économisez de l'argent sur chaque trajet</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-users"></i>
+                        <span>Rencontrez des voyageurs eco-responsables</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Conducteurs sûrs et vérifiés</span>
+                    </div>
+                    
+                    <div style="margin-top: 32px; text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                        <h3 style="margin-bottom: 16px;">Notre impact</h3>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                            <div>
+                                <div style="font-size: 24px; font-weight: 700;">🌱 60%</div>
+                                <div style="font-size: 12px;">Réduction CO2</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 24px; font-weight: 700;">💰 15€</div>
+                                <div style="font-size: 12px;">Économie moyenne</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 24px; font-weight: 700;">👥 10k+</div>
+                                <div style="font-size: 12px;">Membres</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Créez votre compte</h2>
+                    
+                    <form>
+                        <div class="form-group-registration">
+                            <label for="username">Nom d'utilisateur *</label>
+                            <input type="text" id="username" class="form-input-registration" placeholder="Choisissez un nom d'utilisateur">
+                            <div style="font-size: 12px; color: #666; margin-top: 4px;">
+                                <i class="fas fa-info-circle"></i> Ce nom sera visible par les autres utilisateurs
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-registration">
+                            <label for="email">Adresse email *</label>
+                            <input type="email" id="email" class="form-input-registration" placeholder="votre.email@exemple.com">
+                            <div style="font-size: 12px; color: #666; margin-top: 4px;">
+                                <i class="fas fa-info-circle"></i> Nous vous enverrons les confirmations de trajet
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-registration">
+                            <label for="password">Mot de passe *</label>
+                            <input type="password" id="password" class="form-input-registration" placeholder="Créez un mot de passe sécurisé">
+                            <div class="password-strength">
+                                Force du mot de passe: <span style="color: #4CAF50; font-weight: 600;">Fort</span>
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-registration">
+                            <label for="confirm-password">Confirmer le mot de passe *</label>
+                            <input type="password" id="confirm-password" class="form-input-registration" placeholder="Répétez votre mot de passe">
+                            <div style="font-size: 12px; color: #4CAF50; margin-top: 4px;">
+                                <i class="fas fa-check"></i> Les mots de passe correspondent
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-registration">
+                            <label for="phone">Numéro de téléphone (Optionnel)</label>
+                            <input type="tel" id="phone" class="form-input-registration" placeholder="+33 6 12 34 56 78">
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">J'accepte les <a href="#" style="color: #4CAF50;">Conditions d'utilisation</a></label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="privacy" required>
+                                <label for="privacy">J'accepte la <a href="#" style="color: #4CAF50;">Politique de confidentialité</a></label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="newsletter">
+                                <label for="newsletter">Je souhaite recevoir les emails promotionnels</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 16px; margin-bottom: 20px;">
+                            <i class="fas fa-user-plus"></i>
+                            CRÉER MON COMPTE
+                        </button>
+                        
+                        <div class="divider">
+                            <span>OU</span>
+                        </div>
+                        
+                        <button type="button" class="btn" style="width: 100%; background: #4285F4; color: white; margin-bottom: 12px;">
+                            <i class="fab fa-google"></i>
+                            Continuer avec Google
+                        </button>
+                        
+                        <button type="button" class="btn" style="width: 100%; background: #1877F2; color: white; margin-bottom: 20px;">
+                            <i class="fab fa-facebook"></i>
+                            Continuer avec Facebook
+                        </button>
+                        
+                        <div style="text-align: center; color: #666;">
+                            Vous avez déjà un compte? 
+                            <a href="#" style="color: #4CAF50; font-weight: 600;">Se connecter</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
